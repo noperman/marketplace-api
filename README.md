@@ -10,4 +10,4 @@
 5. Run "sequelize db:migrate"
 6. Run "sequelize db:seed:all"
 
-Thank you for gift me a star
+Thank you for gift me a star :)
