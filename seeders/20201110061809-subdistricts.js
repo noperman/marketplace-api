@@ -2,6 +2,10 @@
 
 const { v4: uuidv4 } = require('uuid');
 
+// helper
+const dataProcessing = require("../helper/dataProcessing");
+const now = dataProcessing.datePlus7Hours();
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     /**
@@ -14,7 +18,7 @@ module.exports = {
      * }], {});
     */
     await queryInterface.bulkInsert('subdistricts',[
-      {id: '2a1a3e3f-13b0-469f-9778-623b5bde7e21', districtId:'1ef78584-2cd7-42c8-b818-221a73529e59',subDistricts: 'Seberang Ulu I', createdAt: new Date(), updatedAt: new Date()}
+      {id: '2a1a3e3f-13b0-469f-9778-623b5bde7e21', districtId:'1ef78584-2cd7-42c8-b818-221a73529e59',subDistricts: 'Seberang Ulu I', createdAt: now, updatedAt: now}
     ]);
   },
 

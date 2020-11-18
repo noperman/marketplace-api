@@ -2,6 +2,10 @@
 
 const { v4: uuidv4 } = require('uuid');
 
+// helper
+const dataProcessing = require("../helper/dataProcessing");
+const now = dataProcessing.datePlus7Hours();
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     /**
@@ -14,7 +18,7 @@ module.exports = {
      * }], {});
     */
     await queryInterface.bulkInsert('districts',[
-      {id: '1ef78584-2cd7-42c8-b818-221a73529e59', provinceId:'0af5cafe-7d67-43ee-9935-214af3e8527c',districts: 'Palembang', createdAt: new Date(), updatedAt: new Date()}
+      {id: '1ef78584-2cd7-42c8-b818-221a73529e59', provinceId:'0af5cafe-7d67-43ee-9935-214af3e8527c',districts: 'Palembang', createdAt: now, updatedAt: now}
     ]);
   },
 

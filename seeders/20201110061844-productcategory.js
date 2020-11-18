@@ -1,5 +1,11 @@
 'use strict';
 
+const { v4: uuidv4 } = require('uuid');
+
+// helper
+const dataProcessing = require("../helper/dataProcessing");
+const now = dataProcessing.datePlus7Hours();
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     /**
@@ -12,7 +18,10 @@ module.exports = {
      * }], {});
     */
     await queryInterface.bulkInsert('productcategories',[
-      {id: 'fc9f4663-48c8-4ef9-9923-e64d317acb2a', category:'Tumbuhan', createdAt: new Date(), updatedAt: new Date()}
+      {id: 'fc9f4663-48c8-4ef9-9923-e64d317acb2a', category:'Tumbuhan', createdAt: now, updatedAt: now},
+      {id: uuidv4(), category:'Kerajinan Tangan', createdAt: now, updatedAt: now},
+      {id: uuidv4(), category:'Alat Rumah Tangga', createdAt: now, updatedAt: now},
+      {id: uuidv4(), category:'Alat Pertanian', createdAt: now, updatedAt: now}
     ]);
   },
 

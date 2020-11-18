@@ -7,9 +7,9 @@ const auth_middleware = require("../middleware/auth")
 const dataProcessing = require("../helper/dataProcessing");
 
 // router.get('/product/category', [auth_middleware], async(req,res,next)=>{
-router.get('/product/category', async(req,res,next)=>{
+router.get('/subdistricts', async(req,res,next)=>{
   try{
-    const data = await model.productcategory.findAll({attributes: ['id','category']});
+    const data = await model.subdistricts.findAll({attributes: ['id','districtId','subDistricts']});
 
     return res.status(200).json({msg: dataProcessing.lengthCheck(data),data});
   }catch(e){
